@@ -1,4 +1,4 @@
-package com.nightwingky.jsonConverter;
+package com.nightwingky.jsonData;
 
 import com.google.gson.Gson;
 import com.nightwingky.bean.DialogueVO;
