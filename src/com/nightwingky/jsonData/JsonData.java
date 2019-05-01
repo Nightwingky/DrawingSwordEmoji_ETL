@@ -1,6 +1,6 @@
 package com.nightwingky.jsonData;
 
-import com.nightwingky.bean.StandardDialogueVO;
+import com.nightwingky.bean.StandardDialogueBean;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -20,7 +20,7 @@ public class JsonData {
         }
     }
 
-    private static List<StandardDialogueVO> dialogueList;
+    private static List<StandardDialogueBean> dialogueList;
 
     public static void fileReader() throws IOException {
         FileReader fileReader = new FileReader("dialogue.txt");
@@ -30,9 +30,9 @@ public class JsonData {
 
         while (jsonString != null) {
 
-            List<StandardDialogueVO> list = JsonConverter.getStandardDialogue(jsonString);
+            List<StandardDialogueBean> list = JsonConverter.getStandardDialogue(jsonString);
 
-            for (StandardDialogueVO s : list) {
+            for (StandardDialogueBean s : list) {
                 dialogueList.add(s);
             }
             jsonString = br.readLine();
@@ -41,7 +41,7 @@ public class JsonData {
         fileReader.close();
     }
 
-    public static List<StandardDialogueVO> getDialogueList() {
+    public static List<StandardDialogueBean> getDialogueList() {
         return dialogueList;
     }
 }

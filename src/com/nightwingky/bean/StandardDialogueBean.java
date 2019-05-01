@@ -1,7 +1,7 @@
 package com.nightwingky.bean;
 
 
-public class StandardDialogueVO {
+public class StandardDialogueBean {
 
     private String log_id;
     private double variance;
@@ -51,7 +51,7 @@ public class StandardDialogueVO {
 
     @Override
     public String toString() {
-        return "StandardDialogueVO{" +
+        return "StandardDialogueBean{" +
                 "log_id='" + log_id + '\'' +
                 ", variance=" + variance +
                 ", average=" + average +

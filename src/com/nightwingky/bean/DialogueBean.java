@@ -2,7 +2,7 @@ package com.nightwingky.bean;
 
 import java.util.List;
 
-public class DialogueVO {
+public class DialogueBean {
 
     private Object log_id;
     private String words_result_num;
@@ -102,7 +102,7 @@ public class DialogueVO {
 
     @Override
     public String toString() {
-        return "DialogueVO{" +
+        return "DialogueBean{" +
                 "log_id='" + log_id + '\'' +
                 ", words_result_num='" + words_result_num + '\'' +
                 ", words_result=" + words_result +

@@ -1,21 +1,21 @@
 package com.nightwingky.jsonData;
 
 import com.google.gson.Gson;
-import com.nightwingky.bean.DialogueVO;
-import com.nightwingky.bean.StandardDialogueVO;
+import com.nightwingky.bean.DialogueBean;
+import com.nightwingky.bean.StandardDialogueBean;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class JsonConverter {
 
-    public static List<StandardDialogueVO> getStandardDialogue(String jsonLine) {
+    public static List<StandardDialogueBean> getStandardDialogue(String jsonLine) {
 
-        List<StandardDialogueVO> standardDialogueVOList = new ArrayList<>();
+        List<StandardDialogueBean> standardDialogueBeanList = new ArrayList<>();
 
         Gson gson = new Gson();
 
-        DialogueVO dialogueVO = gson.fromJson(jsonLine, DialogueVO.class);
+        DialogueBean dialogueBean = gson.fromJson(jsonLine, DialogueBean.class);
 
         /**
          思路：
@@ -25,13 +25,13 @@ public class JsonConverter {
          4. 将信息录入后插入到standardDialogueVOList
          5. 返回将信息录入后插入到standardDialogueVOList
          */
-        List<DialogueVO.WordsBean> words_result = dialogueVO.getWords_result();
-        for (DialogueVO.WordsBean w : words_result) {
-            StandardDialogueVO s = new StandardDialogueVO();
+        List<DialogueBean.WordsBean> words_result = dialogueBean.getWords_result();
+        for (DialogueBean.WordsBean w : words_result) {
+            StandardDialogueBean s = new StandardDialogueBean();
             //设置log_id，判断是否有多个log_id，使用不同方法处理
-            String ss = dialogueVO.getLog_id().toString();
+            String ss = dialogueBean.getLog_id().toString();
             if (ss.substring(0, 1).equals("[")) {
-                List<String> log_id = (List<String>) dialogueVO.getLog_id();
+                List<String> log_id = (List<String>) dialogueBean.getLog_id();
                 s.setLog_id(log_id.get(0));
             } else {
                 s.setLog_id(ss);
@@ -42,9 +42,9 @@ public class JsonConverter {
             s.setMin(Double.parseDouble(w.getProbability().getMin()));
             s.setWords(w.getWords());
 
-            standardDialogueVOList.add(s);
+            standardDialogueBeanList.add(s);
         }
 
-        return standardDialogueVOList;
+        return standardDialogueBeanList;
     }
 }

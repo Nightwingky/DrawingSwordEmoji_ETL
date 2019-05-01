@@ -1,6 +1,6 @@
 package com.nightwingky.dao;
 
-import com.nightwingky.bean.StandardDialogueVO;
+import com.nightwingky.bean.StandardDialogueBean;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,7 +14,7 @@ public class DialogueDAO {
         connection = DBUtil.getConnection();
     }
 
-    public static void addDialogues(StandardDialogueVO s) throws SQLException {
+    public static void addDialogues(StandardDialogueBean s) throws SQLException {
         String sql = "INSERT INTO tb_dialogue(log_id, variance, average, min, words) " +
                 "values (?, ?, ?, ?, ?)";
 

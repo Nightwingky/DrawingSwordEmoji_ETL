@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBUtil {
-    private static String URL = "jdbc:mysql://127.0.0.1:3306/db_sword";
+    private static String URL = "jdbc:mysql://127.0.0.1:3306/db_sword?useUnicode=true&characterEncoding=utf-8";
     private static String USER = "root";
-    private static String PASSWORD = "666796";
+    private static String PASSWORD = "";
 
     public static Connection connection = null;
 
