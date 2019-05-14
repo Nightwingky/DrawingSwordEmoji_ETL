@@ -9,7 +9,7 @@
 	"log_id": "01_11525",
 	"words_result_num": 1,
 	"words_result": [{
-		"words": "全休上刺刀准备进攻",
+		"words": "全体上刺刀准备进攻",
 		"probability": {
 			"variance": 0.019966,
 			"average": 0.901787,
